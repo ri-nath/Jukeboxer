@@ -67,15 +67,13 @@ public class JukeboxTicker extends MusicTicker {
     private int findDelay(MusicType requestedMusicType, boolean max) {
         if (this.delays.containsKey(requestedMusicType)) {
             return this.delays.get(requestedMusicType);
+        }
+        if (max) {
+            return requestedMusicType.getMaxDelay();
         } else {
-            if (max) {
-                return requestedMusicType.getMaxDelay();
-            } else {
-                return requestedMusicType.getMinDelay();
-            }
+            return requestedMusicType.getMinDelay();
         }
     }
-
 }
 
 
