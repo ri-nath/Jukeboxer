@@ -1,4 +1,4 @@
-package jukebox;
+package jukebox.musicTicker;
 
 import net.minecraft.client.audio.MusicTicker.MusicType;
 

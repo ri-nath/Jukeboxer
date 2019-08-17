@@ -1,5 +1,6 @@
 package jukebox;
 
+import jukebox.musicTicker.JukeboxTicker;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
