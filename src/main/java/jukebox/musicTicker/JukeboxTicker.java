@@ -17,7 +17,7 @@ public class JukeboxTicker extends MusicTicker {
     private ISound currentMusic;
     private int timeUntilNextMusic = 100;
 
-    JukeboxTicker(Minecraft minecraft) {
+    public JukeboxTicker(Minecraft minecraft) {
         super(minecraft);
         this.minecraft = minecraft;
 
