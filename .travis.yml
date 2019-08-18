@@ -1,12 +1,14 @@
 language: java
+dist: trusty
 install: true
 
-os: linux
-dist: trusty
-jdk: oraclejdk8
+jdk:
+- oraclejdk8
 
 script:
-- ./gradlew build --scan -s
+- ./gradlew clean
+- ./gradlew setupDecompWorkspace
+- ./gradlew buildDependents
 
 before_script:
 - chmod a+x gradlew
