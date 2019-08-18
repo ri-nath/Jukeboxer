@@ -1,8 +1,6 @@
-package jukebox.jukeboxGUI;
+package jukebox.gui;
 
 import jukebox.Jukebox;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
@@ -27,7 +25,7 @@ public class GuiKey {
     public static void onEvent(KeyInputEvent event) {
         System.out.println("Key event");
         if (open.isKeyDown()) {
-            Minecraft.getMinecraft().displayGuiScreen(new JukeboxGuiScreen());
+            Minecraft.getMinecraft().displayGuiScreen(new JukeboxGui());
         }
     }
 }

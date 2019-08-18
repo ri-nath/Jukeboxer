@@ -1,4 +1,4 @@
-package jukebox.musicTicker;
+package jukebox.ticker;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.ISound;
@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class JukeboxTicker extends MusicTicker {
 
+    private final DelayHandler delayHandler;
     private final Random rand = new Random();
     private final Minecraft minecraft;
     private ISound currentMusic;
@@ -18,6 +19,7 @@ public class JukeboxTicker extends MusicTicker {
     public JukeboxTicker(Minecraft minecraft) {
         super(minecraft);
         this.minecraft = minecraft;
+        delayHandler = DelayHandler.getInstance();
     }
 
     @Override
@@ -61,8 +63,8 @@ public class JukeboxTicker extends MusicTicker {
     }
 
     private int findDelay(MusicType requestedMusicType, boolean max) {
-        if (Constants.DELAY_HANDLER.containsKey(requestedMusicType)) {
-            return Constants.DELAY_HANDLER.get(requestedMusicType);
+        if (delayHandler.getDelays().containsKey(requestedMusicType)) {
+            return delayHandler.getDelays().get(requestedMusicType);
         }
         if (max) {
             return requestedMusicType.getMaxDelay();

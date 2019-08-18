@@ -1,7 +1,7 @@
 package jukebox;
 
-import jukebox.jukeboxGUI.GuiKey;
-import jukebox.musicTicker.JukeboxTicker;
+import jukebox.gui.GuiKey;
+import jukebox.ticker.JukeboxTicker;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
