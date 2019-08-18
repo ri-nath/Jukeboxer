@@ -6,8 +6,13 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiLabel;
 import net.minecraft.client.gui.GuiScreen;
 
-public class JukeboxGuiLabel extends GuiLabel {
-    JukeboxGuiLabel(GuiScreen guiScreen) {
-        super(Minecraft.getMinecraft().fontRenderer, 1, guiScreen.width / 2 - 20, guiScreen.height / 2 + 40, 300,  20, 0xFFFFFF);
+class JukeboxGuiLabel extends GuiLabel {
+    JukeboxGuiLabel(GuiScreen guiScreen, int position) {
+        super(Minecraft.getMinecraft().fontRenderer, 1, 30, 15 + 20 * position, 300,  20, 0xFFFFFF);
+    }
+
+    GuiLabel getLabel(String text) {
+        this.addLine(text);
+        return this;
     }
 }
