@@ -1,6 +1,6 @@
-package jukebox;
+package jukeboxer;
 
-import jukebox.ticker.JukeboxTicker;
+import jukeboxer.ticker.JukeboxTicker;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -11,7 +11,7 @@ import java.lang.reflect.Field;
 
 @Mod(modid = Jukebox.MODID, version = Jukebox.VERSION, name = Jukebox.NAME)
 public class Jukebox {
-    public static final String MODID = "jukebox";
+    public static final String MODID = "jukeboxer";
     public static final String NAME = "Jukebox";
     public static final String VERSION = "1.0";
     public static JukeboxTicker ticker;

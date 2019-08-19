@@ -1,7 +1,7 @@
-package jukebox.gui.components;
+package jukeboxer.gui.components;
 
-import jukebox.Constants;
-import jukebox.ticker.DelayHandler;
+import jukeboxer.Constants;
+import jukeboxer.ticker.DelayHandler;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.audio.MusicTicker.MusicType;

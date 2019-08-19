@@ -1,8 +1,8 @@
-package jukebox.gui;
+package jukeboxer.gui;
 
-import jukebox.gui.components.JukeboxGuiLabel;
-import jukebox.gui.components.JukeboxGuiTextField;
-import jukebox.ticker.DelayHandler;
+import jukeboxer.gui.components.JukeboxGuiLabel;
+import jukeboxer.gui.components.JukeboxGuiTextField;
+import jukeboxer.ticker.DelayHandler;
 
 import com.google.common.collect.Lists;
 import org.lwjgl.input.Keyboard;

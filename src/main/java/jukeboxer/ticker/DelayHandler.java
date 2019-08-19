@@ -1,6 +1,6 @@
-package jukebox.ticker;
+package jukeboxer.ticker;
 
-import jukebox.Constants;
+import jukeboxer.Constants;
 import net.minecraft.client.audio.MusicTicker.MusicType;
 
 import java.util.HashMap;
