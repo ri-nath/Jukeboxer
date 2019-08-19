@@ -1,8 +1,8 @@
 [{
-  "modid": "jukebox",
-  "name": "Jukebox",
+  "modid": "jukeboxer",
+  "name": "jukeboxer",
   "description": "Gives more control over Minecraft's music system.",
-  "version": "1.0.0",
+  "version": "1.1",
   "mcversion": "1.12.2",
   "authorList": ["brokenmotor, Vayelcrau"]
 }]
