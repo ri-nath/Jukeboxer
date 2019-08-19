@@ -19,10 +19,10 @@ public class KeyPressHandler {
         keys = new KeyBinding[4];
         minecraft = Minecraft.getMinecraft();
 
-        keys[0] = new KeyBinding("Jukebox Mod Settings", Keyboard.KEY_O, Jukebox.NAME);
-        keys[1] = new KeyBinding("Play Next Track", Keyboard.KEY_P, Jukebox.NAME);
-        keys[2] = new KeyBinding("Stop Current Track", Keyboard.KEY_L, Jukebox.NAME);
-        keys[3] = new KeyBinding("Pause/Play Current Track", Keyboard.KEY_K, Jukebox.NAME);
+        keys[0] = new KeyBinding("Jukeboxer Mod Settings", Keyboard.KEY_O, Jukeboxer.NAME);
+        keys[1] = new KeyBinding("Play Next Track", Keyboard.KEY_P, Jukeboxer.NAME);
+        keys[2] = new KeyBinding("Stop Current Track", Keyboard.KEY_L, Jukeboxer.NAME);
+        keys[3] = new KeyBinding("Pause/Play Current Track", Keyboard.KEY_K, Jukeboxer.NAME);
 
         for (KeyBinding key : keys) {
             ClientRegistry.registerKeyBinding(key);
@@ -36,14 +36,14 @@ public class KeyPressHandler {
             minecraft.displayGuiScreen(new JukeboxGui());
         }
         if (keys[1].isKeyDown()) {
-            Jukebox.ticker.playMusic(minecraft.getAmbientMusicType());
+            Jukeboxer.ticker.playMusic(minecraft.getAmbientMusicType());
         }
         if (keys[2].isKeyDown()) {
             System.out.println("key is down");
-            Jukebox.ticker.stopMusic();
+            Jukeboxer.ticker.stopMusic();
         }
         if (keys[3].isKeyDown()) {
-            Jukebox.ticker.pauseMusic();
+            Jukeboxer.ticker.pauseMusic();
         }
     }
 }

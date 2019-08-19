@@ -9,11 +9,11 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import java.lang.reflect.Field;
 
-@Mod(modid = Jukebox.MODID, version = Jukebox.VERSION, name = Jukebox.NAME)
-public class Jukebox {
+@Mod(modid = Jukeboxer.MODID, version = Jukeboxer.VERSION, name = Jukeboxer.NAME)
+public class Jukeboxer {
     public static final String MODID = "jukeboxer";
-    public static final String NAME = "Jukebox";
-    public static final String VERSION = "1.0";
+    public static final String NAME = "Jukeboxer";
+    public static final String VERSION = "1.1";
     public static JukeboxTicker ticker;
 
     @Mod.EventHandler
@@ -28,9 +28,9 @@ public class Jukebox {
         MinecraftForge.EVENT_BUS.register(KeyPressHandler.class);
 
         try {
-            Field ticker = Minecraft.getMinecraft().getClass().getDeclaredField("mcMusicTicker");
-            ticker.setAccessible(true);
-            ticker.set(Minecraft.getMinecraft(), ticker);
+            Field field = Minecraft.getMinecraft().getClass().getDeclaredField("mcMusicTicker");
+            field.setAccessible(true);
+            field.set(Minecraft.getMinecraft(), ticker);
         } catch (Exception error) {
             error.printStackTrace();
         }
