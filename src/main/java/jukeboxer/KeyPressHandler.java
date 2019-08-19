@@ -1,7 +1,6 @@
-package jukebox;
+package jukeboxer;
 
-import jukebox.Jukebox;
-import jukebox.gui.JukeboxGui;
+import jukeboxer.gui.JukeboxGui;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;

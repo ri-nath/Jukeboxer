@@ -1,4 +1,4 @@
-package jukebox.ticker;
+package jukeboxer.ticker;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.ISound;

@@ -1,4 +1,4 @@
-package jukebox.gui.components;
+package jukeboxer.gui.components;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiLabel;
