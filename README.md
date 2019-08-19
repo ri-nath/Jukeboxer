@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.org/vayelcrau/Jukebox.svg?branch=master)](https://travis-ci.org/vayelcrau/Jukebox)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-
 Jukebox is a simple Minecraft mod that allows the user greater control over the frequency at which in-game music is played. The mod features a GUI menu from which you can adjust delays between in-game tracks, as well as hotkeys for pause, play, stop, and skip music.
 
 ---
@@ -19,3 +18,4 @@ To install Jukebox, head to [the releases page](https://github.com/vayelcrau/Juk
 - `P` Skips the current track and immediately starts the next one.
 - `L` Stops the current track.
 - `K` Pauses the current track, press again to resume the track.
+
