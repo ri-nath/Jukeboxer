@@ -1,6 +1,5 @@
 package jukebox;
 
-import jukebox.gui.GuiKey;
 import jukebox.ticker.JukeboxTicker;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,21 +14,23 @@ public class Jukebox {
     public static final String MODID = "jukebox";
     public static final String NAME = "Jukebox";
     public static final String VERSION = "1.0";
+    public static JukeboxTicker ticker;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        GuiKey.registerKey();
+        ticker = new JukeboxTicker(Minecraft.getMinecraft());
+        KeyPressHandler.registerKeys();
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 
-        MinecraftForge.EVENT_BUS.register(GuiKey.class);
+        MinecraftForge.EVENT_BUS.register(KeyPressHandler.class);
 
         try {
             Field ticker = Minecraft.getMinecraft().getClass().getDeclaredField("mcMusicTicker");
             ticker.setAccessible(true);
-            ticker.set(Minecraft.getMinecraft(), new JukeboxTicker(Minecraft.getMinecraft()));
+            ticker.set(Minecraft.getMinecraft(), ticker);
         } catch (Exception error) {
             error.printStackTrace();
         }
