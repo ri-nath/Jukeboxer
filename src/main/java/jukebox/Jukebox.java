@@ -1,6 +1,5 @@
 package jukebox;
 
-import jukebox.gui.GuiKey;
 import jukebox.ticker.JukeboxTicker;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -18,13 +17,13 @@ public class Jukebox {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        GuiKey.registerKey();
+        KeyPressHandler.registerKey();
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 
-        MinecraftForge.EVENT_BUS.register(GuiKey.class);
+        MinecraftForge.EVENT_BUS.register(KeyPressHandler.class);
 
         try {
             Field ticker = Minecraft.getMinecraft().getClass().getDeclaredField("mcMusicTicker");
