@@ -15,9 +15,11 @@ public class JukeboxTicker extends MusicTicker {
     private final Minecraft minecraft;
     private ISound currentMusic;
     private int timeUntilNextMusic = 100;
+    private boolean paused;
 
     public JukeboxTicker(Minecraft minecraft) {
         super(minecraft);
+        paused = false;
         this.minecraft = minecraft;
         delayHandler = DelayHandler.getInstance();
     }
@@ -57,9 +59,28 @@ public class JukeboxTicker extends MusicTicker {
 
     @Override
     public void playMusic(MusicType requestedMusicType) {
+        if (this.currentMusic != null) this.minecraft.getSoundHandler().stopSounds();
         this.currentMusic = PositionedSoundRecord.getMusicRecord(requestedMusicType.getMusicLocation());
         this.minecraft.getSoundHandler().playSound(this.currentMusic);
         this.timeUntilNextMusic = Integer.MAX_VALUE;
+    }
+
+    public void pauseMusic() {
+        if (paused) {
+            this.minecraft.getSoundHandler().resumeSounds();
+            paused = false;
+        } else {
+            this.minecraft.getSoundHandler().pauseSounds();
+            paused = true;
+        }
+    }
+
+    public void stopMusic() {
+        if (this.currentMusic != null) {
+            this.minecraft.getSoundHandler().stopSounds();
+            this.currentMusic = null;
+            this.timeUntilNextMusic = Integer.MAX_VALUE;
+        }
     }
 
     private int findDelay(MusicType requestedMusicType, boolean max) {
