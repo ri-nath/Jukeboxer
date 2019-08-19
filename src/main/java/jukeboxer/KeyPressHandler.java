@@ -39,7 +39,6 @@ public class KeyPressHandler {
             Jukeboxer.ticker.playMusic(minecraft.getAmbientMusicType());
         }
         if (keys[2].isKeyDown()) {
-            System.out.println("key is down");
             Jukeboxer.ticker.stopMusic();
         }
         if (keys[3].isKeyDown()) {

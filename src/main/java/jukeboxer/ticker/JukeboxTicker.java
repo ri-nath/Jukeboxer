@@ -26,7 +26,6 @@ public class JukeboxTicker extends MusicTicker {
 
     @Override
     public void update() {
-        System.out.println("Updating!!!!!!!!!!!!");
         JukeboxTicker.MusicType musicticker$musictype = this.minecraft.getAmbientMusicType();
 
         // checks if music is still being played
@@ -45,13 +44,11 @@ public class JukeboxTicker extends MusicTicker {
             {
                 this.currentMusic = null;
                 this.timeUntilNextMusic = Math.min(MathHelper.getInt(this.rand, findDelay(musicticker$musictype, false), findDelay(musicticker$musictype, true)), this.timeUntilNextMusic);
-                System.out.println("Music has stopped, time until NEW MUSIC:" + timeUntilNextMusic);
             }
         }
 
         // ensures that the time until next music doesn't exceed the maximum delay
         this.timeUntilNextMusic = Math.min(this.timeUntilNextMusic, findDelay(musicticker$musictype, true));
-        System.out.println("!!time until NEW MUSIC:" + timeUntilNextMusic);
 
         // if no music is being played and it's time to play music, plays music
         if (this.currentMusic == null && this.timeUntilNextMusic-- <= 0)
